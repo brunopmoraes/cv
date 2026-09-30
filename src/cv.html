@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bruno Moraes</title>
+<meta name="description" content="Currículo de Bruno Moraes — Desenvolvedor Backend Sênior, Java &amp; Spring Boot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F4EF;
+    --surface: #FFFFFF;
+    --surface-soft: #EFEEE7;
+    --border: #DEDCD1;
+    --ink: #1C2622;
+    --ink-soft: #4C5750;
+    --ink-faint: #8A9089;
+    --accent: #2E6F5E;
+    --accent-ink: #1D4A3E;
+    --accent-soft: #E3EEE9;
+    --tag-bg: #EEF2EF;
+    --tag-ink: #33453D;
+    --font-display: "Spectral", Georgia, "Times New Roman", serif;
+    --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101512;
+      --surface: #171E1A;
+      --surface-soft: #1D2521;
+      --border: #2B342F;
+      --ink: #EAEDE9;
+      --ink-soft: #B7C0B8;
+      --ink-faint: #7C877E;
+      --accent: #6FBFA6;
+      --accent-ink: #9AD8C4;
+      --accent-soft: #1B2E27;
+      --tag-bg: #1C2622;
+      --tag-ink: #B9D9CB;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101512;
+    --surface: #171E1A;
+    --surface-soft: #1D2521;
+    --border: #2B342F;
+    --ink: #EAEDE9;
+    --ink-soft: #B7C0B8;
+    --ink-faint: #7C877E;
+    --accent: #6FBFA6;
+    --accent-ink: #9AD8C4;
+    --accent-soft: #1B2E27;
+    --tag-bg: #1C2622;
+    --tag-ink: #B9D9CB;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    padding-inline: 20px;
+    padding-block: 0 64px;
+  }
+  ::selection { background: var(--accent-soft); color: var(--accent-ink); }
+
+  .wrap { max-width: 900px; margin: 0 auto; }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-block: 18px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+  .topbar .mark {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+  }
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    background: var(--surface);
+    gap: 2px;
+  }
+  .lang-toggle button,
+  .lang-toggle a {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    border: none;
+    background: transparent;
+    color: var(--ink-soft);
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: normal;
+    transition: background 0.15s, color 0.15s;
+  }
+  .lang-toggle button.active,
+  .lang-toggle a.active {
+    background: var(--accent);
+    color: var(--surface);
+  }
+  .lang-toggle button:not(.active):hover,
+  .lang-toggle a:not(.active):hover { color: var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-block: 40px 28px; }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.1rem, 5vw, 3rem);
+    font-weight: 600;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .hero .role {
+    font-size: 1.1rem;
+    color: var(--accent-ink);
+    font-weight: 500;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+  .contact-row a, .contact-row span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+  .contact-row a:hover { border-color: var(--accent); color: var(--accent-ink); }
+  .contact-row svg { width: 14px; height: 14px; flex-shrink: 0; stroke: currentColor; }
+
+  /* ---------- Sections ---------- */
+  section.block { padding-block: 30px; border-top: 1px solid var(--border); }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+  .summary p {
+    font-size: 1.04rem;
+    color: var(--ink-soft);
+    margin: 0;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+
+  /* ---------- Skills ---------- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 18px 24px;
+  }
+  .skill-group h3 {
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    background: var(--tag-bg);
+    color: var(--tag-ink);
+    padding: 3px 9px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  /* ---------- Experience ---------- */
+  .job { position: relative; padding-left: 26px; margin-bottom: 34px; }
+  .job:last-child { margin-bottom: 0; }
+  .job::before {
+    content: "";
+    position: absolute;
+    left: 4px; top: 6px; bottom: -18px;
+    width: 1px;
+    background: var(--border);
+  }
+  .job:last-child::before { display: none; }
+  .job::after {
+    content: "";
+    position: absolute;
+    left: 0; top: 6px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .job-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 4px; }
+  .job-title { font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+  .job-dates { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-faint); white-space: nowrap; }
+  .job-org { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 12px; }
+  .job ul { margin: 0 0 12px; padding-left: 20px; }
+  .job li { margin-bottom: 8px; color: var(--ink-soft); }
+  .job li:last-child { margin-bottom: 0; }
+  .job li b { color: var(--ink); font-weight: 600; }
+  .job li.tech-line {
+    list-style: none;
+    margin-left: -20px;
+    margin-top: -4px;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+  }
+
+  /* ---------- Earlier experience ---------- */
+  .earlier-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+    padding-block: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .earlier-item:last-child { border-bottom: none; }
+  .earlier-item .co { font-weight: 600; color: var(--ink); }
+  .earlier-item .role-line { color: var(--ink-soft); font-size: 0.92rem; }
+  .earlier-item .dates { font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-faint); text-align: right; white-space: nowrap; }
+  .earlier-item .note { grid-column: 1 / -1; color: var(--ink-faint); font-size: 0.86rem; margin-top: 2px; }
+
+  /* ---------- Two-col (education/certs) ---------- */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .info-item { margin-bottom: 14px; }
+  .info-item:last-child { margin-bottom: 0; }
+  .info-item .t { font-weight: 600; color: var(--ink); font-size: 0.95rem; }
+  .info-item .s { color: var(--ink-soft); font-size: 0.88rem; }
+  .info-item .d { font-family: var(--font-mono); color: var(--ink-faint); font-size: 0.78rem; }
+
+  .lang-list { display: flex; gap: 28px; flex-wrap: wrap; }
+  .lang-item .t { font-weight: 600; color: var(--ink); }
+  .lang-item .s { color: var(--ink-soft); font-size: 0.9rem; }
+
+  footer.end {
+    padding-top: 26px;
+    margin-top: 10px;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 640px) {
+    .two-col { grid-template-columns: 1fr; }
+    .job-head { flex-direction: column; align-items: flex-start; }
+    .earlier-item { grid-template-columns: 1fr; }
+    .earlier-item .dates { text-align: left; }
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .lang-toggle { display: none; }
+    section.block { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <span class="mark">bmoraes.com.br</span>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="pt" class="active">PT</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <h1>Bruno Moraes</h1>
+    <p class="role i18n" data-pt="Desenvolvedor Backend Sênior — Java, Spring Boot, Microsserviços" data-en="Senior Backend Developer — Java, Spring Boot, Microservices">Desenvolvedor Backend Sênior — Java, Spring Boot, Microsserviços</p>
+    <div class="contact-row">
+      <span class="i18n" data-pt="São Paulo, Brasil" data-en="São Paulo, Brazil">São Paulo, Brasil</span>
+      <a href="tel:+5511992222810"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(11) 99222-2810</a>
+      <a href="mailto:bruno@bmoraes.com.br"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>bruno@bmoraes.com.br</a>
+      <a href="https://linkedin.com/in/brmoraes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>linkedin.com/in/brmoraes</a>
+      <a href="https://bmoraes.com.br" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>bmoraes.com.br</a>
+    </div>
+  </header>
+
+  <section class="block summary">
+    <p class="eyebrow i18n" data-pt="Resumo" data-en="Summary">Resumo</p>
+    <p class="i18n" data-pt="Desenvolvedor Java Sênior com mais de 10 anos de experiência projetando, desenvolvendo e mantendo APIs REST robustas e escaláveis com Java 8, Java 11, Java 17 e Java 21, utilizando Spring Boot, Spring Data, Spring Security e Spring Batch. Experiência sólida em arquitetura de microsserviços (Hexagonal, Clean Architecture, DDD, Event-Driven), mensageria (Apache Kafka, RabbitMQ, AWS SQS), bancos de dados relacionais e NoSQL (PostgreSQL, Oracle, SQL Server, MongoDB, DynamoDB, Redis), conteinerização e orquestração (Docker, Kubernetes) e pipelines de CI/CD (Jenkins, GitFlow). Atuação como Tech Lead, responsável por revisão de código, definição de padrões arquiteturais, segurança e performance, e mentoria de desenvolvedores juniores e plenos em metodologias ágeis Scrum e Kanban. Experiência adicional em projetos de pagamentos (APIs PIX) e varejo/e-commerce de alta volumetria de transações."
+       data-en="Senior Java Developer with 10+ years of experience designing, building, and maintaining robust, scalable REST APIs using Java 8, 11, 17, and 21 with Spring Boot, Spring Data, Spring Security, and Spring Batch. Solid background in microservices architecture (Hexagonal, Clean Architecture, DDD, Event-Driven), messaging (Apache Kafka, RabbitMQ, AWS SQS), relational and NoSQL databases (PostgreSQL, Oracle, SQL Server, MongoDB, DynamoDB, Redis), containerization and orchestration (Docker, Kubernetes), and CI/CD pipelines (Jenkins, GitFlow). Acted as Tech Lead, owning code review, architectural standards, security, and performance, while mentoring junior and mid-level developers under Scrum and Kanban. Additional experience with payments projects (PIX APIs) and high-transaction-volume retail/e-commerce systems.">
+      Desenvolvedor Java Sênior com mais de 10 anos de experiência projetando, desenvolvendo e mantendo APIs REST robustas e escaláveis com Java 8, Java 11, Java 17 e Java 21, utilizando Spring Boot, Spring Data, Spring Security e Spring Batch. Experiência sólida em arquitetura de microsserviços (Hexagonal, Clean Architecture, DDD, Event-Driven), mensageria (Apache Kafka, RabbitMQ, AWS SQS), bancos de dados relacionais e NoSQL (PostgreSQL, Oracle, SQL Server, MongoDB, DynamoDB, Redis), conteinerização e orquestração (Docker, Kubernetes) e pipelines de CI/CD (Jenkins, GitFlow). Atuação como Tech Lead, responsável por revisão de código, definição de padrões arquiteturais, segurança e performance, e mentoria de desenvolvedores juniores e plenos em metodologias ágeis Scrum e Kanban. Experiência adicional em projetos de pagamentos (APIs PIX) e varejo/e-commerce de alta volumetria de transações.
+    </p>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow i18n" data-pt="Habilidades técnicas" data-en="Technical Skills">Habilidades técnicas</p>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3 class="i18n" data-pt="Linguagens" data-en="Languages">Linguagens</h3>
+        <div class="tag-row">
+          <span class="tag">Java 8</span><span class="tag">Java 11</span><span class="tag">Java 17</span><span class="tag">Java 21</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Frameworks</h3>
+        <div class="tag-row">
+          <span class="tag">Spring Boot</span><span class="tag">Spring Data</span><span class="tag">Spring Security</span><span class="tag">Spring Batch</span><span class="tag">JPA</span><span class="tag">Hibernate</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="i18n" data-pt="Arquitetura" data-en="Architecture">Arquitetura</h3>
+        <div class="tag-row">
+          <span class="tag">Microservices</span><span class="tag">Hexagonal</span><span class="tag">Clean Architecture</span><span class="tag">DDD</span><span class="tag">Event-Driven</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="i18n" data-pt="Mensageria &amp; integração" data-en="Messaging &amp; Integration">Mensageria &amp; integração</h3>
+        <div class="tag-row">
+          <span class="tag">Kafka</span><span class="tag">RabbitMQ</span><span class="tag">AWS SQS</span><span class="tag">REST</span><span class="tag">SOA</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="i18n" data-pt="Bancos de dados" data-en="Databases">Bancos de dados</h3>
+        <div class="tag-row">
+          <span class="tag">PostgreSQL</span><span class="tag">Oracle</span><span class="tag">SQL Server</span><span class="tag">MongoDB</span><span class="tag">DynamoDB</span><span class="tag">Redis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Cloud &amp; DevOps</h3>
+        <div class="tag-row">
+          <span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span><span class="tag">CI/CD</span><span class="tag">GitFlow</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="i18n" data-pt="Segurança" data-en="Security">Segurança</h3>
+        <div class="tag-row">
+          <span class="tag">Spring Security</span><span class="tag">OAuth2</span><span class="tag">JWT</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="i18n" data-pt="Qualidade &amp; testes" data-en="Testing &amp; Quality">Qualidade &amp; testes</h3>
+        <div class="tag-row">
+          <span class="tag">JUnit 5</span><span class="tag">Mockito</span><span class="tag">Testcontainers</span><span class="tag">Cucumber</span><span class="tag">SonarQube</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="i18n" data-pt="Observabilidade" data-en="Observability">Observabilidade</h3>
+        <div class="tag-row">
+          <span class="tag">Datadog</span><span class="tag">Grafana</span><span class="tag">CloudWatch</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="i18n" data-pt="Metodologias" data-en="Methodologies">Metodologias</h3>
+        <div class="tag-row">
+          <span class="tag">Scrum</span><span class="tag">Kanban</span><span class="tag i18n" data-pt="Code review" data-en="Code Review">Code review</span><span class="tag i18n" data-pt="Mentoria" data-en="Mentoring">Mentoria</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow i18n" data-pt="Experiência profissional" data-en="Professional Experience">Experiência profissional</p>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title i18n" data-pt="Senior Java Software Engineer" data-en="Senior Java Software Engineer">Senior Java Software Engineer</span>
+        <span class="job-dates i18n" data-pt="Fev 2021 — Jun 2026" data-en="Feb 2021 — Jun 2026">Fev 2021 — Jun 2026</span>
+      </div>
+      <div class="job-org i18n" data-pt="Grupo FCamara (múltiplos clientes) · Remoto" data-en="Grupo FCamara (multiple clients) · Remote">Grupo FCamara (múltiplos clientes) · Remoto</div>
+      <ul>
+        <li class="i18n"
+          data-pt="<b>Projeto Vitat (RD)</b>, atuando como Developer e Tech Lead: APIs REST para autenticação e autorização de usuários em arquitetura event-driven; revisão de código e definição de padrões técnicos."
+          data-en="<b>Vitat Project (RD)</b>, as Developer and Tech Lead: built REST APIs for user authentication/authorization in an event-driven architecture; code review and technical standards definition.">
+          <b>Projeto Vitat (RD)</b>, atuando como Developer e Tech Lead: APIs REST para autenticação e autorização de usuários em arquitetura event-driven; revisão de código e definição de padrões técnicos.
+        </li>
+        <li class="tech-line i18n" data-pt="Tecnologias: Java 11, Node.js, Go, AWS SQS, DynamoDB, Redis, Kinesis, Lambda, MongoDB." data-en="Stack: Java 11, Node.js, Go, AWS SQS, DynamoDB, Redis, Kinesis, Lambda, MongoDB." style="font-size:0.82rem;">Tecnologias: Java 11, Node.js, Go, AWS SQS, DynamoDB, Redis, Kinesis, Lambda, MongoDB.</li>
+        <li class="i18n"
+          data-pt="<b>Projeto Casas Bahia</b>: arquitetura hexagonal com microsserviços nos padrões Orchestrator, Worker e Validate; automação da jornada do colaborador; integração com SAP; APIs para campanhas de varejo de alta volumetria."
+          data-en="<b>Casas Bahia Project</b>: hexagonal architecture with Orchestrator/Worker/Validate microservice patterns; employee-journey automation; SAP integration; APIs for high-transaction-volume retail campaigns.">
+          <b>Projeto Casas Bahia</b>: arquitetura hexagonal com microsserviços nos padrões Orchestrator, Worker e Validate; automação da jornada do colaborador; integração com SAP; APIs para campanhas de varejo de alta volumetria.
+        </li>
+        <li class="tech-line i18n" data-pt="Tecnologias: Java 21, Spring Boot, Spring Batch, Kafka, Redis, PostgreSQL, MongoDB, Kubernetes, AWS, Docker." data-en="Stack: Java 21, Spring Boot, Spring Batch, Kafka, Redis, PostgreSQL, MongoDB, Kubernetes, AWS, Docker." style="font-size:0.82rem;">Tecnologias: Java 21, Spring Boot, Spring Batch, Kafka, Redis, PostgreSQL, MongoDB, Kubernetes, AWS, Docker.</li>
+        <li class="i18n"
+          data-pt="<b>Projeto Unimed</b>: desenvolvimento e suporte de sistemas legados."
+          data-en="<b>Unimed Project</b>: development and support for legacy systems.">
+          <b>Projeto Unimed</b>: desenvolvimento e suporte de sistemas legados.
+        </li>
+        <li class="tech-line i18n" data-pt="Tecnologias: Java 8, Java 11, Azure, Docker, Weblogic, Grafana, Oracle." data-en="Stack: Java 8, Java 11, Azure, Docker, Weblogic, Grafana, Oracle." style="font-size:0.82rem;">Tecnologias: Java 8, Java 11, Azure, Docker, Weblogic, Grafana, Oracle.</li>
+        <li class="i18n"
+          data-pt="<b>Projeto Dasa</b>: integração de exames com plataforma de precificação e emissão de nota fiscal."
+          data-en="<b>Dasa Project</b>: exam-results integration with a pricing and invoicing platform.">
+          <b>Projeto Dasa</b>: integração de exames com plataforma de precificação e emissão de nota fiscal.
+        </li>
+        <li class="tech-line i18n" data-pt="Tecnologias: Java, MongoDB, PostgreSQL, AWS Lambda, RDS, Datadog." data-en="Stack: Java, MongoDB, PostgreSQL, AWS Lambda, RDS, Datadog." style="font-size:0.82rem;">Tecnologias: Java, MongoDB, PostgreSQL, AWS Lambda, RDS, Datadog.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Senior Java Software Engineer</span>
+        <span class="job-dates i18n" data-pt="Set 2020 — Fev 2021" data-en="Sep 2020 — Feb 2021">Set 2020 — Fev 2021</span>
+      </div>
+      <div class="job-org i18n" data-pt="mazzatech · Remoto" data-en="mazzatech · Remote">mazzatech · Remoto</div>
+      <ul>
+        <li class="i18n" data-pt="Desenvolvimento de APIs para transferências PIX (GET e POST) com foco em alta disponibilidade e performance." data-en="Built PIX transfer APIs (GET and POST) focused on high availability and performance.">Desenvolvimento de APIs para transferências PIX (GET e POST) com foco em alta disponibilidade e performance.</li>
+        <li class="i18n" data-pt="Criação e manutenção de microsserviços integrados a AWS SQS, DynamoDB, RDS, Redis, Docker e Kubernetes." data-en="Built and maintained microservices integrated with AWS SQS, DynamoDB, RDS, Redis, Docker, and Kubernetes.">Criação e manutenção de microsserviços integrados a AWS SQS, DynamoDB, RDS, Redis, Docker e Kubernetes.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title i18n" data-pt="Desenvolvedor Java Sênior" data-en="Senior Java Developer">Desenvolvedor Java Sênior</span>
+        <span class="job-dates i18n" data-pt="Fev 2019 — Set 2020" data-en="Feb 2019 — Sep 2020">Fev 2019 — Set 2020</span>
+      </div>
+      <div class="job-org">e-Deploy · Barueri, SP</div>
+      <ul>
+        <li class="i18n" data-pt="Suporte a projetos legados e migração de arquitetura monolítica para microsserviços em cliente do setor financeiro. Tecnologias: Java, Spring Boot, RabbitMQ." data-en="Supported legacy projects and led the migration from a monolithic architecture to microservices for a financial-sector client. Stack: Java, Spring Boot, RabbitMQ.">Suporte a projetos legados e migração de arquitetura monolítica para microsserviços em cliente do setor financeiro. Tecnologias: Java, Spring Boot, RabbitMQ.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title i18n" data-pt="Especialista em Desenvolvimento de Software" data-en="Software Development Specialist">Especialista em Desenvolvimento de Software</span>
+        <span class="job-dates i18n" data-pt="Out 2017 — Jan 2019" data-en="Oct 2017 — Jan 2019">Out 2017 — Jan 2019</span>
+      </div>
+      <div class="job-org i18n" data-pt="FCamara — Formação e Consultoria · São Paulo, SP" data-en="FCamara — Training &amp; Consulting · São Paulo, SP">FCamara — Formação e Consultoria · São Paulo, SP</div>
+      <ul>
+        <li class="i18n" data-pt="Desenvolvimento full-stack em projetos de análise e desenvolvimento com stack Java e frontend moderno. Tecnologias: Java 7, Java 8, Spring Boot, Spring Batch, Docker, Jenkins, Vue.js, Oracle, Azure." data-en="Full-stack development on analysis and development projects with a Java + modern frontend stack. Stack: Java 7, Java 8, Spring Boot, Spring Batch, Docker, Jenkins, Vue.js, Oracle, Azure.">Desenvolvimento full-stack em projetos de análise e desenvolvimento com stack Java e frontend moderno. Tecnologias: Java 7, Java 8, Spring Boot, Spring Batch, Docker, Jenkins, Vue.js, Oracle, Azure.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title i18n" data-pt="Desenvolvedor Java Sênior" data-en="Senior Java Developer">Desenvolvedor Java Sênior</span>
+        <span class="job-dates i18n" data-pt="Mar 2017 — Out 2017" data-en="Mar 2017 — Oct 2017">Mar 2017 — Out 2017</span>
+      </div>
+      <div class="job-org">Stefanini · Barueri, SP</div>
+      <ul>
+        <li class="i18n" data-pt="<b>Projeto New Elo</b>: análise e desenvolvimento com Java, Spring, Oracle, Weblogic." data-en="<b>New Elo Project</b>: analysis and development with Java, Spring, Oracle, Weblogic."><b>Projeto New Elo</b>: análise e desenvolvimento com Java, Spring, Oracle, Weblogic.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title i18n" data-pt="Desenvolvedor Java Sênior / Líder Técnico" data-en="Senior Java Developer / Tech Lead">Desenvolvedor Java Sênior / Líder Técnico</span>
+        <span class="job-dates i18n" data-pt="Jul 2016 — Fev 2017" data-en="Jul 2016 — Feb 2017">Jul 2016 — Fev 2017</span>
+      </div>
+      <div class="job-org i18n" data-pt="Tecmaster Informática — Consultoria · São Paulo, SP" data-en="Tecmaster Informática — Consulting · São Paulo, SP">Tecmaster Informática — Consultoria · São Paulo, SP</div>
+      <ul>
+        <li class="i18n" data-pt="Internet Banking de banco multinacional: responsável pela camada de serviços e webservices SOA." data-en="Internet Banking for a multinational bank: owned the services layer and SOA web services.">Internet Banking de banco multinacional: responsável pela camada de serviços e webservices SOA.</li>
+        <li class="i18n" data-pt="Liderança técnica de time com 8 desenvolvedores como ponto focal técnico do projeto." data-en="Led a team of 8 developers as the project's technical point of contact.">Liderança técnica de time com 8 desenvolvedores como ponto focal técnico do projeto.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title i18n" data-pt="Desenvolvedor Java Sênior" data-en="Senior Java Developer">Desenvolvedor Java Sênior</span>
+        <span class="job-dates i18n" data-pt="Ago 2015 — Mai 2016" data-en="Aug 2015 — May 2016">Ago 2015 — Mai 2016</span>
+      </div>
+      <div class="job-org">GTCON Tecnologia e Serviços · São Paulo, SP</div>
+      <ul>
+        <li class="i18n" data-pt="Análise e desenvolvimento de sistemas web com Struts, JSF, Spring Batch, webservices e Oracle." data-en="Analysis and development of web systems with Struts, JSF, Spring Batch, web services, and Oracle.">Análise e desenvolvimento de sistemas web com Struts, JSF, Spring Batch, webservices e Oracle.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title i18n" data-pt="Desenvolvedor Java Sênior" data-en="Senior Java Developer">Desenvolvedor Java Sênior</span>
+        <span class="job-dates i18n" data-pt="Jan 2014 — Jul 2015" data-en="Jan 2014 — Jul 2015">Jan 2014 — Jul 2015</span>
+      </div>
+      <div class="job-org">Grupo TCI · Cotia, SP</div>
+      <ul>
+        <li class="i18n" data-pt="Desenvolvimento de webservices SOA, sistemas WMS (SupplyWEB) e GED (Easy Content) com integração SAGA WMS." data-en="Built SOA web services and WMS (SupplyWEB) / ECM (Easy Content) systems integrated with SAGA WMS.">Desenvolvimento de webservices SOA, sistemas WMS (SupplyWEB) e GED (Easy Content) com integração SAGA WMS.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow i18n" data-pt="Experiência anterior" data-en="Earlier Experience">Experiência anterior</p>
+
+    <div class="earlier-item">
+      <div>
+        <div class="co">Banco Votorantim</div>
+        <div class="role-line i18n" data-pt="Analista de Sistemas" data-en="Systems Analyst">Analista de Sistemas</div>
+      </div>
+      <div class="dates i18n" data-pt="Ago 2013 — Set 2013" data-en="Aug 2013 — Sep 2013">Ago 2013 — Set 2013</div>
+      <div class="note i18n" data-pt="Migração PowerBuilder, ambientes e banco Sybase." data-en="PowerBuilder migration, environments, and Sybase database.">Migração PowerBuilder, ambientes e banco Sybase.</div>
+    </div>
+    <div class="earlier-item">
+      <div>
+        <div class="co">A2F Solutions</div>
+        <div class="role-line i18n" data-pt="Desenvolvedor Java" data-en="Java Developer">Desenvolvedor Java</div>
+      </div>
+      <div class="dates i18n" data-pt="Jun 2012 — Mai 2013" data-en="Jun 2012 — May 2013">Jun 2012 — Mai 2013</div>
+      <div class="note i18n" data-pt="Java, BPM IBM Lombardi, webservices." data-en="Java, IBM Lombardi BPM, web services.">Java, BPM IBM Lombardi, webservices.</div>
+    </div>
+    <div class="earlier-item">
+      <div>
+        <div class="co">CSC</div>
+        <div class="role-line i18n" data-pt="Desenvolvedor Java" data-en="Java Developer">Desenvolvedor Java</div>
+      </div>
+      <div class="dates i18n" data-pt="Set 2009 — Mar 2012" data-en="Sep 2009 — Mar 2012">Set 2009 — Mar 2012</div>
+      <div class="note i18n" data-pt="SOA, XSD/WSDL, BPM AquaLogic, suporte N2." data-en="SOA, XSD/WSDL, AquaLogic BPM, N2 support.">SOA, XSD/WSDL, BPM AquaLogic, suporte N2.</div>
+    </div>
+    <div class="earlier-item">
+      <div>
+        <div class="co">Amdocs</div>
+        <div class="role-line i18n" data-pt="Estagiário" data-en="Intern">Estagiário</div>
+      </div>
+      <div class="dates i18n" data-pt="Fev 2008 — Nov 2008" data-en="Feb 2008 — Nov 2008">Fev 2008 — Nov 2008</div>
+      <div class="note i18n" data-pt="Migração PowerBuilder, testes e manutenção." data-en="PowerBuilder migration, testing, and maintenance.">Migração PowerBuilder, testes e manutenção.</div>
+    </div>
+    <div class="earlier-item">
+      <div>
+        <div class="co">TIVIT</div>
+        <div class="role-line i18n" data-pt="Analista de Sistemas" data-en="Systems Analyst">Analista de Sistemas</div>
+      </div>
+      <div class="dates i18n" data-pt="Out 2005 — Fev 2008" data-en="Oct 2005 — Feb 2008">Out 2005 — Fev 2008</div>
+      <div class="note i18n" data-pt="Relatórios gerenciais e operacionais em VBA." data-en="Management and operational reporting in VBA.">Relatórios gerenciais e operacionais em VBA.</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="two-col">
+      <div>
+        <p class="eyebrow i18n" data-pt="Formação acadêmica" data-en="Education">Formação acadêmica</p>
+        <div class="info-item">
+          <div class="t i18n" data-pt="Bacharel em Sistemas de Informação" data-en="BSc in Information Systems">Bacharel em Sistemas de Informação</div>
+          <div class="s">Universidade Presbiteriana Mackenzie · São Paulo, SP</div>
+          <div class="d">2007 — 2013</div>
+        </div>
+        <div class="info-item">
+          <div class="t i18n" data-pt="MBA em Gestão de Projetos" data-en="MBA in Project Management">MBA em Gestão de Projetos</div>
+          <div class="s">Faculdades Metropolitanas Unidas (FMU) · São Paulo, SP</div>
+          <div class="d">2016 — 2018</div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow i18n" data-pt="Certificações" data-en="Certifications">Certificações</p>
+        <div class="info-item">
+          <div class="t">Scrum Fundamentals Certified (SFC)</div>
+          <div class="s">SCRUMstudy</div>
+        </div>
+        <div class="info-item">
+          <div class="t">Scrum Foundation Professional Certificate (SFPC)</div>
+          <div class="s">CertiProf</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow i18n" data-pt="Idiomas" data-en="Languages">Idiomas</p>
+    <div class="lang-list">
+      <div class="lang-item">
+        <div class="t i18n" data-pt="Português" data-en="Portuguese">Português</div>
+        <div class="s i18n" data-pt="Nativo" data-en="Native">Nativo</div>
+      </div>
+      <div class="lang-item">
+        <div class="t i18n" data-pt="Inglês" data-en="English">Inglês</div>
+        <div class="s i18n" data-pt="Profissional (leitura, escrita e comunicação técnica)" data-en="Professional (reading, writing, and technical communication)">Profissional (leitura, escrita e comunicação técnica)</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="end">
+    <span>Bruno Moraes</span>
+    <span class="i18n" data-pt="Atualizado em setembro de 2026" data-en="Updated September 2026">Atualizado em setembro de 2026</span>
+  </footer>
+
+</div>
+
+<script>
+  (function() {
+    var buttons = document.querySelectorAll('.lang-toggle button');
+    var i18nEls = document.querySelectorAll('.i18n');
+
+    function setLang(lang) {
+      document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+      i18nEls.forEach(function(el) {
+        var val = el.getAttribute('data-' + lang);
+        if (val != null) el.innerHTML = val;
+      });
+      buttons.forEach(function(b) {
+        b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+      });
+      try { localStorage.setItem('cv-lang', lang); } catch (e) {}
+    }
+
+    buttons.forEach(function(b) {
+      b.addEventListener('click', function() { setLang(b.getAttribute('data-lang')); });
+    });
+
+    var saved = null;
+    try { saved = localStorage.getItem('cv-lang'); } catch (e) {}
+    if (saved === 'en') setLang('en');
+  })();
+</script>
+</body>
+</html>

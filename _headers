@@ -1,0 +1,7 @@
+# Arquivos de trabalho do repo não devem aparecer em buscas
+/src/*
+  X-Robots-Tag: noindex
+/scripts/*
+  X-Robots-Tag: noindex
+/functions/*
+  X-Robots-Tag: noindex
